@@ -1,21 +1,33 @@
 :root {
-    --couleur-principale: #1C2D49;
-    --couleur-fond: #F5F7FA;
-    --couleur-accent: #FFC300;
+    --couleur-principale: #2C3E50;
+    --couleur-fond: #F4F6F8;
+    --couleur-accent: #3498DB;
     --couleur-secondaire: #E0E4EC;
-    --couleur-texte: #1C2D49;
+    --couleur-texte: #333333;
+    --color-error: #E74C3C;
+    --color-success: #27AE60;
+    --color-light-grey: #DDE2E6;
+    --color-info: #A3CEF1;
     --rayon: 8px;
   }
   * {
     box-sizing: border-box;
   }
-  body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 2rem;
-    background-color: var(--couleur-fond);
-    color: var(--couleur-texte);
-    line-height: 1.6;
+ 
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0.5rem;
+      background-color: var(--couleur-fond);
+      color: var(--couleur-texte);
+      line-height: 1.6;
+    }
+  
+  
+  @media(min-width: 768px){
+    body{
+      padding:2rem;
+    }
   }
   h1, h2 {
     margin-top: 2rem;
@@ -89,3 +101,152 @@
   .section textarea {
     background-color: #fefefe;
   }
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  .features-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  
+  .features-table caption {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+  
+  .features-table th,
+  .features-table td {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  .features-table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .features-table thead {
+      display: none;
+    }
+  
+    .features-table tr {
+      display: block;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      background: #fff;
+    }
+  
+    .features-table td {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      border: none;
+      border-bottom: 1px solid #eee;
+    }
+  
+    .features-table td:last-child {
+      border-bottom: none;
+    }
+  
+    .features-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #333;
+    }
+  }
+  @media (max-width: 768px) {
+    .evo-feature {
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+  
+    .evo-feature-header {
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      font-size: 1rem;
+      background: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  
+    .evo-feature-body {
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+  }
+/* === Structure responsive === */
+.evo-cards {
+  display: block;
+}
+
+.evo-table {
+  display: none;
+}
+
+/* === Apparence des cartes (mobile) === */
+.evo-feature {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-light-grey, #ddd);
+}
+
+.evo-feature-header {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.evo-feature-body div {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+/* === Responsive : on inverse à partir de 768px === */
+@media (min-width: 768px) {
+  .evo-cards {
+    display: none;
+  }
+
+  .evo-table {
+    display: table;
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .features-table {
+    display: none 
+  }
+}
+@media (min-width: 768px) {
+  .evo-feature {
+    display: none 
+  }
+}
